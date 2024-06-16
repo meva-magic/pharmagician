@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 652320497}
   - component: {fileID: 652320496}
   m_Layer: 0
-  m_Name: bg
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6, y: 4.01}
-    newSize: {x: 10.24, y: 10.03}
+    newSize: {x: 6, y: 4.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
