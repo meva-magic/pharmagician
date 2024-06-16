@@ -9,7 +9,8 @@ public class CraftManager : MonoBehaviour
     public List<GameObject> craftablePrefabs; 
     public Dictionary<string, string> craftRecipes; 
 
-    private List<GameObject> objectsInCraftArea = new List<GameObject>(); 
+
+    public List<GameObject> objectsInCraftArea = new List<GameObject>(); 
 
     void Start()
     {
