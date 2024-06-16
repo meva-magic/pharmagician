@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 628201072110481441}
   - component: {fileID: 5489530558060155861}
   - component: {fileID: 4027889865788325746}
+  - component: {fileID: -1113476326541291434}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6785332386851650495}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.58, y: -2.78, z: -0.06571012}
-  m_LocalScale: {x: 0.07300678, y: 0.07300678, z: 0.07300678}
+  m_LocalPosition: {x: -4.9396, y: -4.0447, z: -0.06571012}
+  m_LocalScale: {x: 0.61978614, y: 0.7037586, z: 0.07300678}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_SortingLayerID: -1121797875
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 449f5df59decf4d4e8f46936748f9590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5076fb32279635a46ab85760523d4988, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10.24, y: 10.03}
@@ -148,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1113476326541291434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785332386851650495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95d8effc60752b4ea641a8b2459ea24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
