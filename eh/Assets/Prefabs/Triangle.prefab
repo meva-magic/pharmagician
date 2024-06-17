@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1113476326541291434}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Creature
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.5210686}
+  m_Offset: {x: 0.09754299, y: 0.107619904}
   serializedVersion: 2
-  m_Radius: 9.19389
+  m_Radius: 2.2527766
 --- !u!50 &4027889865788325746
 Rigidbody2D:
   serializedVersion: 4
