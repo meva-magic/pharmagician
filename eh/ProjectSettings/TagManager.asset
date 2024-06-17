@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Creature
   - ScreenShake
+  - BloodStain
+  - CenterPoint
   layers:
   - Default
   - TransparentFX

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 48829922}
   - component: {fileID: 48829924}
   - component: {fileID: 48829923}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Textcraft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 67550930}
   - component: {fileID: 67550929}
   - component: {fileID: 67550928}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CraftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 126982145}
   - component: {fileID: 126982144}
   - component: {fileID: 126982147}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FrogButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,13 +538,13 @@ GameObject:
   m_Component:
   - component: {fileID: 197036532}
   - component: {fileID: 197036531}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &197036531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 12367f6926c34f94f94d1cb05aae4c4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -864,6 +864,37 @@ Transform:
   - {fileID: 1699345485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -33.285}
+--- !u!1 &487070958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487070959}
+  m_Layer: 0
+  m_Name: Stains
+  m_TagString: CenterPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487070959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487070958}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05035902, y: 0.08727414, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 652320497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547279668
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +906,7 @@ GameObject:
   - component: {fileID: 547279669}
   - component: {fileID: 547279671}
   - component: {fileID: 547279670}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,6 +1112,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 857384181}
+  - {fileID: 487070959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674343441
@@ -1094,7 +1126,7 @@ GameObject:
   - component: {fileID: 674343443}
   - component: {fileID: 674343442}
   m_Layer: 0
-  m_Name: EffectsManager
+  m_Name: ScreenShake
   m_TagString: ScreenShake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,11 +1154,11 @@ Transform:
   m_GameObject: {fileID: 674343441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59884036, y: 0.013495028, z: 0.0065064896}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1261184268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857384180
 GameObject:
@@ -1224,7 +1256,7 @@ GameObject:
   - component: {fileID: 1022778510}
   - component: {fileID: 1022778509}
   - component: {fileID: 1022778508}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,7 +1363,7 @@ GameObject:
   - component: {fileID: 1178992346}
   - component: {fileID: 1178992345}
   - component: {fileID: 1178992348}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EyeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 839.79, y: 370.3}
+  m_AnchoredPosition: {x: 839.79, y: 372.5}
   m_SizeDelta: {x: 122.7826, y: 55.1142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178992345
@@ -1561,6 +1593,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1754596714}
+  - {fileID: 674343443}
+  - {fileID: 1933447941}
+  - {fileID: 2064440454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261184269
@@ -1639,7 +1674,7 @@ GameObject:
   - component: {fileID: 1365716198}
   - component: {fileID: 1365716200}
   - component: {fileID: 1365716199}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1808,7 @@ GameObject:
   - component: {fileID: 1502201750}
   - component: {fileID: 1502201752}
   - component: {fileID: 1502201751}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1944,7 @@ GameObject:
   - component: {fileID: 1522696019}
   - component: {fileID: 1522696018}
   - component: {fileID: 1522696021}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HeartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: 464}
+  m_AnchoredPosition: {x: 806.8, y: 467.91}
   m_SizeDelta: {x: 202.3614, y: 55.4167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522696018
@@ -2139,7 +2174,7 @@ GameObject:
   - component: {fileID: 1854517607}
   - component: {fileID: 1854517606}
   - component: {fileID: 1854517605}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ClearButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e121edc7d8b1f4199ea78ac5be5673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 0}
   effect: {fileID: 7676332788148034142, guid: e3c46628d6a0c6244b3444fa5e60b908, type: 3}
+  bloodStain: {fileID: 7990332860415125728, guid: 6bec9dadafec5c743acabff561ccd1b2, type: 3}
 --- !u!114 &1854517606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,7 +2321,7 @@ GameObject:
   - component: {fileID: 1914154636}
   - component: {fileID: 1914154638}
   - component: {fileID: 1914154637}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Textcraft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,12 +2505,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933447938}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1261184268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064440452
 GameObject:
@@ -2520,12 +2557,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064440452}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.365134, y: 0.30628315, z: 0.04910601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.365134, y: 0.30628315, z: 10.049106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1261184268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2064440455
 MonoBehaviour:
@@ -2546,9 +2583,6 @@ SceneRoots:
   - {fileID: 1261184268}
   - {fileID: 199992210}
   - {fileID: 210960465}
-  - {fileID: 2064440454}
-  - {fileID: 1933447941}
   - {fileID: 1022778507}
   - {fileID: 652320497}
   - {fileID: 197036532}
-  - {fileID: 674343443}
