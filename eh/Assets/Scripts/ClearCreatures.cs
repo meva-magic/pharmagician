@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class KillCreatures : MonoBehaviour
+public class ClearCreatures : MonoBehaviour
 {
     private Shake shake;
     private GameObject stains;
@@ -26,7 +26,7 @@ public class KillCreatures : MonoBehaviour
 
     public void ClearAll()
     {
-        //newBloodStain.transform.SetParent(stains.transform, false);
+        AudioManager.instance.Play("Clear");
 
         foreach (GameObject creatures in GameObject.FindGameObjectsWithTag("Creature")) 
         {
@@ -52,7 +52,7 @@ public class KillCreatures : MonoBehaviour
             tmp.a = alphaVal;
             rend.color = tmp;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.06f);
         }
     }
 }

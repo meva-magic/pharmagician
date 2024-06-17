@@ -26,7 +26,7 @@ public class Spawn : MonoBehaviour
         var spawn = Random.Range(0, spawnPoints.Count);
         Instantiate(creature[i], spawnPoints[spawn].transform.position, Quaternion.identity);
 
-        //AudioManager.instance.Play("SpawnSound");
+        AudioManager.instance.Play("Spawn");
         shake.CamShake();
     }
 }

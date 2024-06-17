@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e121edc7d8b1f4199ea78ac5be5673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
+  rend: {fileID: 9038813720856792534, guid: 6bec9dadafec5c743acabff561ccd1b2, type: 3}
   effect: {fileID: 7676332788148034142, guid: e3c46628d6a0c6244b3444fa5e60b908, type: 3}
   bloodStain: {fileID: 7990332860415125728, guid: 6bec9dadafec5c743acabff561ccd1b2, type: 3}
 --- !u!114 &1854517606
@@ -2543,11 +2543,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: BGmusic
+  - name: Background
     clip: {fileID: 8300000, guid: 316b78a606ced8c43b9ca2065dc5004d, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Spawn
+    clip: {fileID: 8300000, guid: 35a7dc772d0b59a4498a50a7533a2610, type: 3}
+    volume: 0.1
+    pitch: 0.69
+    loop: 0
+    source: {fileID: 0}
+  - name: Clear
+    clip: {fileID: 8300000, guid: bd5d2ed8b5c249c43a751596a0d130bd, type: 3}
+    volume: 0.42
+    pitch: 0.42
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &2064440454
 Transform:

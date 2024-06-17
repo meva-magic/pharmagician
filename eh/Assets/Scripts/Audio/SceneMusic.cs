@@ -6,6 +6,6 @@ public class SceneMusic : MonoBehaviour
 {
     void Start()
     {
-        AudioManager.instance.Play("BGmusic");
+        AudioManager.instance.Play("Background");
     }
 }
