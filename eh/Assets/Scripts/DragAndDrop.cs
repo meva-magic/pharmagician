@@ -1,26 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private bool selected;
+    private bool isSelected = false;
+    private Vector3 initialPosition;
+    private Vector3 offset;
 
-    void Update()
+    void OnMouseDown()
     {
-        if(selected == true)
-        {
-            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(cursorPos.x, cursorPos.y);
-        }
-
-        if(Input.GetMouseButtonUp(0))
-        {selected = false;}
+        isSelected = true;
+        initialPosition = transform.position;
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void OnMouseOver()
+    void OnMouseDrag()
     {
-        if(Input.GetMouseButtonDown(0))
-        {selected = true;}
+        if (isSelected)
+        {
+            Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            transform.position = new Vector3(cursorPosition.x, cursorPosition.y, transform.position.z);
+        }
+    }
+
+    void OnMouseUp()
+    {
+        isSelected = false;
     }
 }

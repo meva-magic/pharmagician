@@ -4,36 +4,48 @@ using UnityEngine.UI;
 
 public class CraftManager : MonoBehaviour
 {
-    public GameObject craftingArea; 
-    public Button craftButton; 
-    public List<GameObject> craftablePrefabs; 
-    public Dictionary<string, string> craftRecipes; 
+    public Button craftButton;
+    public List<GameObject> craftablePrefabs;
+    public Dictionary<string, string> craftRecipes;
 
+    public List<GameObject> objectsInCraftArea = new List<GameObject>();
 
-    public List<GameObject> objectsInCraftArea = new List<GameObject>(); 
+    private void Awake()
+    {
+        craftRecipes = new Dictionary<string, string>
+        {
+            { "CircleSquare", "Triangle" },
+            { "SquareTriangle", "Circle" },
+        };
+    }
 
     void Start()
     {
         craftButton.onClick.AddListener(OnCraftButtonClicked);
-
-        craftRecipes = new Dictionary<string, string>
-        {
-            { "CircleSquare", "Triangle" }, 
-            { "SquareTriangle", "Circle" }, 
-        };
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (craftablePrefabs.Contains(other.gameObject))
+        Debug.Log($"Trigger Enter: {other.gameObject.name}");
+
+        if (craftablePrefabs.Exists(prefab => prefab.name == other.gameObject.name))
         {
-            objectsInCraftArea.Add(other.gameObject);
-            Debug.Log($"Object {other.gameObject.name} entered crafting area.");
+            if (!objectsInCraftArea.Contains(other.gameObject))
+            {
+                objectsInCraftArea.Add(other.gameObject);
+                Debug.Log($"Object {other.gameObject.name} entered crafting area.");
+            }
+        }
+        else
+        {
+            Debug.Log($"Object {other.gameObject.name} is not a craftable prefab.");
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log($"Trigger Exit: {other.gameObject.name}");
+
         if (objectsInCraftArea.Contains(other.gameObject))
         {
             objectsInCraftArea.Remove(other.gameObject);
@@ -62,10 +74,19 @@ public class CraftManager : MonoBehaviour
 
                 if (resultPrefab != null)
                 {
-                    Instantiate(resultPrefab, craftingArea.transform.position, Quaternion.identity);
+                   
+                    GameObject objectToReplace = objectsInCraftArea[0];
+                    Vector3 spawnPosition = objectToReplace.transform.position;
+
+
+                    Instantiate(resultPrefab, spawnPosition, Quaternion.identity);
                     Debug.Log($"Created new object: {resultPrefab.name}");
 
-                    foreach (var obj in objectsInCraftArea)
+
+                    List<GameObject> objectsToRemove = new List<GameObject>(objectsInCraftArea);
+
+
+                    foreach (var obj in objectsToRemove)
                     {
                         Destroy(obj);
                         Debug.Log($"Destroyed object: {obj.name}");
