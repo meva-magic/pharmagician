@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CraftManager : MonoBehaviour
 {
@@ -28,17 +29,19 @@ public class CraftManager : MonoBehaviour
     {
         Debug.Log($"Trigger Enter: {other.gameObject.name}");
 
-        if (craftablePrefabs.Exists(prefab => prefab.name == other.gameObject.name))
+        string objectName = GetOriginalName(other.gameObject.name);
+
+        if (craftablePrefabs.Exists(prefab => prefab.name == objectName))
         {
             if (!objectsInCraftArea.Contains(other.gameObject))
             {
                 objectsInCraftArea.Add(other.gameObject);
-                Debug.Log($"Object {other.gameObject.name} entered crafting area.");
+                Debug.Log($"Object {objectName} entered crafting area.");
             }
         }
         else
         {
-            Debug.Log($"Object {other.gameObject.name} is not a craftable prefab.");
+            Debug.Log($"Object {objectName} is not a craftable prefab.");
         }
     }
 
@@ -49,7 +52,7 @@ public class CraftManager : MonoBehaviour
         if (objectsInCraftArea.Contains(other.gameObject))
         {
             objectsInCraftArea.Remove(other.gameObject);
-            Debug.Log($"Object {other.gameObject.name} exited crafting area.");
+            Debug.Log($"Object {GetOriginalName(other.gameObject.name)} exited crafting area.");
         }
     }
 
@@ -59,12 +62,15 @@ public class CraftManager : MonoBehaviour
 
         foreach (var obj in objectsInCraftArea)
         {
-            Debug.Log($"Object in crafting area: {obj.name}");
+            Debug.Log($"Object in crafting area: {GetOriginalName(obj.name)}");
         }
 
         if (objectsInCraftArea.Count == 2)
         {
-            string key = objectsInCraftArea[0].name + objectsInCraftArea[1].name;
+            // Получение имен объектов и сортировка их в алфавитном порядке для создания ключа
+            List<string> objectNames = objectsInCraftArea.Select(obj => GetOriginalName(obj.name)).ToList();
+            objectNames.Sort();
+            string key = objectNames[0] + objectNames[1];
             Debug.Log($"Crafting with key: {key}");
 
             if (craftRecipes.ContainsKey(key))
@@ -74,22 +80,18 @@ public class CraftManager : MonoBehaviour
 
                 if (resultPrefab != null)
                 {
-                   
                     GameObject objectToReplace = objectsInCraftArea[0];
                     Vector3 spawnPosition = objectToReplace.transform.position;
-
 
                     Instantiate(resultPrefab, spawnPosition, Quaternion.identity);
                     Debug.Log($"Created new object: {resultPrefab.name}");
 
-
                     List<GameObject> objectsToRemove = new List<GameObject>(objectsInCraftArea);
-
 
                     foreach (var obj in objectsToRemove)
                     {
                         Destroy(obj);
-                        Debug.Log($"Destroyed object: {obj.name}");
+                        Debug.Log($"Destroyed object: {GetOriginalName(obj.name)}");
                     }
 
                     objectsInCraftArea.Clear();
@@ -108,5 +110,14 @@ public class CraftManager : MonoBehaviour
         {
             Debug.LogError("Not enough objects in crafting area");
         }
+    }
+
+    private string GetOriginalName(string name)
+    {
+        if (name.EndsWith("(Clone)"))
+        {
+            return name.Substring(0, name.Length - 7);
+        }
+        return name;
     }
 }
